@@ -165,7 +165,9 @@ def build(project, offline=False):
         text = read(f)
         if f.endswith('.md'):
             meta = chapter_meta(f, text)
-            inner = md.render(meta['body'])
+            # 章内标题降一级：## 小节 → h3，避免与章节标题同级
+            body = re.sub(r'^(#{2,5})\s', lambda m: '#' * (len(m.group(1)) + 1) + ' ', meta['body'], flags=re.M)
+            inner = md.render(body)
             if meta['num'] == 0:
                 chunks.append(inner)          # 00 开头：封面，不套章节壳
             else:

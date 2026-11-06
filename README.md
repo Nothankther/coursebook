@@ -1,5 +1,7 @@
 # coursebook
 
+[English](README.en.md) | 简体中文
+
 把课程笔记写成一本书：**单文件 HTML，公式离线渲染，可搜索、可打印、可发布**。
 
 不是某个课程的资料，而是一个工具：你写 Markdown，它生成一份 4 MB 左右、双击就能打开的手册。
@@ -53,10 +55,15 @@ my-course/
 
 `coursebook build` 会把 `src/` 下所有文件按文件名排序拼接；`NN-` 前缀决定章节序号，`00-` 开头视为封面、不套章节壳。
 
-仓库里的 `examples/demo` 就是一个能直接构建的最小项目：
+仓库里有两份示例，都能直接构建：
+
+| 目录 | 内容 |
+|---|---|
+| `examples/demo` | 最小示例：公式、表格、五类盒子、折叠例题、自测 |
+| `examples/labview` | 真实案例：《虚拟仪器技术》8 章，21 张表、8 道例题 |
 
 ```bash
-cd examples/demo && coursebook build
+cd examples/labview && coursebook build
 ```
 
 ## 写作语法
