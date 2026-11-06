@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coursebook"
+version = "0.1.0"
+description = "把课程笔记变成可搜索、可交互、可打印的单文件 HTML 复习手册"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Nothankther" }]
+keywords = ["education", "notes", "html", "mathjax", "study"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Education",
+]
+
+[project.urls]
+Homepage = "https://github.com/Nothankther/coursebook"
+
+[project.scripts]
+coursebook = "coursebook.cli:main"
+
+[tool.setuptools]
+packages = ["coursebook"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+coursebook = ["assets/*", "template/*", "template/**/*"]
